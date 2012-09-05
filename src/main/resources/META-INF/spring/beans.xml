@@ -5,7 +5,9 @@
 
 
   <bean id="personRepository" class="com.github.lalyos.kore.FixedPersonRepository" />
-  <bean id="greetingService" class="com.github.lalyos.kore.SimpleGreetingService" />
+  <bean id="greetingService" class="com.github.lalyos.kore.SimpleGreetingService" >
+    <constructor-arg value="Welcome" />
+  </bean>
 
   <bean class="com.github.lalyos.kore.GreetingApp"
     p:greetingService-ref="greetingService"
