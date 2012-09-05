@@ -11,7 +11,7 @@
   </bean>
   
   <bean class="com.github.lalyos.kore.I18NGreetingService" 
-  p:messageKey="msg.welcome" p:locale="en"/>
+  p:messageKey="msg.welcome" p:locale="hu"/>
 
   <bean class="com.github.lalyos.kore.GreetingApp" />
   
