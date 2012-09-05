@@ -10,7 +10,8 @@
     <constructor-arg value="Welcome" />
   </bean>
   
-  <bean class="com.github.lalyos.kore.I18NGreetingService" />
+  <bean class="com.github.lalyos.kore.I18NGreetingService" 
+  p:messageKey="msg.welcome" p:locale="en"/>
 
   <bean class="com.github.lalyos.kore.GreetingApp" />
   

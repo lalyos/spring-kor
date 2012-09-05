@@ -8,14 +8,36 @@ import org.springframework.context.MessageSourceAware;
 public class I18NGreetingService implements GreetingService, MessageSourceAware {
 
     private MessageSource messageSource;
+    private String messageKey;
+    private Locale locale;
     
     public void greet(String msg) {
-        String message = messageSource.getMessage("msg.welcome", null, Locale.ENGLISH);
+        String message = messageSource.getMessage(messageKey, null, locale);
         System.out.println(message + " " + msg);
     }
 
     public void setMessageSource(MessageSource messageSource) {
         this.messageSource = messageSource;
+    }
+
+    public String getMessageKey() {
+        return messageKey;
+    }
+
+    public void setMessageKey(String messageKey) {
+        this.messageKey = messageKey;
+    }
+
+    public Locale getLocale() {
+        return locale;
+    }
+
+    public void setLocale(Locale locale) {
+        this.locale = locale;
+    }
+
+    public MessageSource getMessageSource() {
+        return messageSource;
     }
 
 }
