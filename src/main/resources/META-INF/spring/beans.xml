@@ -6,9 +6,14 @@
 
 
   <bean id="personRepository" class="com.github.lalyos.kore.FixedPersonRepository" />
-  <bean id="greetingService" class="com.github.lalyos.kore.SimpleGreetingService" >
+  <bean id="_greetingService" class="com.github.lalyos.kore.SimpleGreetingService" autowire-candidate="false">
     <constructor-arg value="Welcome" />
   </bean>
+  
+  <bean class="com.github.lalyos.kore.I18NGreetingService" />
 
   <bean class="com.github.lalyos.kore.GreetingApp" />
+  
+  <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+  p:basename="messages"/>
 </beans>
