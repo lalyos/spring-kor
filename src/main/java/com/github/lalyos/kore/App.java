@@ -11,7 +11,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("META-INF/spring/beans.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("META-INF/spring/*.xml");
         GreetingApp app = ctx.getBean(GreetingApp.class);
         app.greetEverybody();
     }

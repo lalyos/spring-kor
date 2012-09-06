@@ -3,17 +3,17 @@ package com.github.lalyos.kore;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 @Component
 public class FixedPersonRepository implements PersonRepository {
 
+    @Autowired
     private List<Person> allPeople = new ArrayList<Person>();
 
     public FixedPersonRepository() {
-        allPeople.add(new Person("gyorgy","matolcsy"));
-        allPeople.add(new Person("viktor","orban"));
     }
     public List<Person> getAllPeople() {
         return allPeople;
