@@ -1,10 +1,18 @@
 package com.github.lalyos.kore;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class GreetingApp {
 
+    @Autowired
     private GreetingService greetingService;
+    @Autowired
     private PersonRepository personRepository;
     
+    @Value("Bill, Clinton")
     private Person owner;
     
     public GreetingService getGreetingService() {

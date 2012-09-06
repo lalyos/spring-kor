@@ -3,6 +3,10 @@ package com.github.lalyos.kore;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+@Component
 public class FixedPersonRepository implements PersonRepository {
 
     private List<Person> allPeople = new ArrayList<Person>();

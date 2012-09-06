@@ -2,13 +2,20 @@ package com.github.lalyos.kore;
 
 import java.util.Locale;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
 import org.springframework.context.MessageSourceAware;
+import org.springframework.stereotype.Component;
 
+@Component
 public class I18NGreetingService implements GreetingService, MessageSourceAware {
 
     private MessageSource messageSource;
+    
+    @Value("${greeting.service.msg.key}")
     private String messageKey;
+    
+    @Value("${greeting.service.locale}")
     private Locale locale;
     
     public void greet(String msg) {
