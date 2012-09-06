@@ -5,6 +5,8 @@ public class GreetingApp {
     private GreetingService greetingService;
     private PersonRepository personRepository;
     
+    private Person owner;
+    
     public GreetingService getGreetingService() {
         return greetingService;
     }
@@ -19,8 +21,15 @@ public class GreetingApp {
     }
     
     public void greetEverybody() {
+        System.out.println("owner: " + owner + " is greeting everybody");
         for (Person nextPerson : personRepository.getAllPeople()) {
             greetingService.greet(nextPerson.toString());
         }
+    }
+    public Person getOwner() {
+        return owner;
+    }
+    public void setOwner(Person owner) {
+        this.owner = owner;
     }
 }

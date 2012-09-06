@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:p="http://www.springframework.org/schema/p" default-autowire="byType" xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:c="http://www.springframework.org/schema/c"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
@@ -13,9 +14,13 @@
   <context:property-placeholder location="greeting.properties"/>
     
   <bean class="com.github.lalyos.kore.I18NGreetingService" 
-  p:messageKey="${greeting.service.msg.key}" p:locale="${greeting.service.locale}"/>
+  p:messageKey="${greeting.service.msg.key}" p:locale="hu" />
+  
+  
 
-  <bean class="com.github.lalyos.kore.GreetingApp" />
+  <bean class="com.github.lalyos.kore.GreetingApp" p:owner-ref="bill" />
+  
+  <bean id="bill" class="com.github.lalyos.kore.Person" c:firstName="Bill" c:lastName="Clinton" ></bean>
   
   <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
   p:basename="messages"/>
