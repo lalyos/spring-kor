@@ -16,7 +16,6 @@ public class App
     public static void main( String[] args )
     {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(GreetingConfiguration.class);        
-
         GreetingApp app = ctx.getBean(GreetingApp.class);
         app.greetEverybody();
     }

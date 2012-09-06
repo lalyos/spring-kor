@@ -15,8 +15,8 @@ public class GreetingConfiguration {
     @Bean
     public GreetingApp greetingApp() {
         GreetingApp app = new GreetingApp();
-        app.setGreetingService(greetingService());
-        app.setPersonRepository(personRepository());
+        //app.setGreetingService(greetingService());
+        //app.setPersonRepository(personRepository());
         app.setOwner(new Person("Bill", "Clinton [owner]"));
         
         return app;
