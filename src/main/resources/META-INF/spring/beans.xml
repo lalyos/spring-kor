@@ -19,9 +19,7 @@
   
 
   <bean class="com.github.lalyos.kore.GreetingApp"  >
-    <property name="owner">
-          <bean class="com.github.lalyos.kore.Person" c:firstName="Bill" c:lastName="Clinton" />
-    </property>
+    <property name="owner" value="Bill, Clinton" />
    </bean>
 
   
