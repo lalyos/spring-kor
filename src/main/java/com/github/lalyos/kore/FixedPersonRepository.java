@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Repository;
 public class FixedPersonRepository implements PersonRepository {
 
     @Autowired
+    @Qualifier("male")
     private List<Person> allPeople = new ArrayList<Person>();
 
     public FixedPersonRepository() {

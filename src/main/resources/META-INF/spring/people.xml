@@ -4,8 +4,14 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-<bean class="com.github.lalyos.kore.Person" c:firstName="Viktor" c:lastName="Orban"></bean>
-<bean class="com.github.lalyos.kore.Person" c:firstName="Gyorgy" c:lastName="Matolcsy"></bean>
-<bean class="com.github.lalyos.kore.Person" c:firstName="Rozsa" c:lastName="Hoffmann"></bean>
+<bean class="com.github.lalyos.kore.Person" c:firstName="Viktor" c:lastName="Orban" >
+  <qualifier value="male"></qualifier>
+</bean>
+<bean class="com.github.lalyos.kore.Person" c:firstName="Gyorgy" c:lastName="Matolcsy">
+  <qualifier value="male"></qualifier>
+</bean>
+<bean class="com.github.lalyos.kore.Person" c:firstName="Rozsa" c:lastName="Hoffmann">
+  <qualifier value="female"></qualifier>
+</bean>
 
 </beans>
