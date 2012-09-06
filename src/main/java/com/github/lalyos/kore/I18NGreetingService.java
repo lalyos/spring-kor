@@ -14,10 +14,10 @@ public class I18NGreetingService implements GreetingService, MessageSourceAware 
 
     private MessageSource messageSource;
     
-    //@Value("${greeting.service.msg.key}")
+    @Value("${greeting.service.msg.key}")
     private String messageKey;
     
-    //@Value("${greeting.service.locale}")
+    @Value("${greeting.service.locale}")
     private Locale locale;
     
     public void greet(String msg) {

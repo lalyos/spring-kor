@@ -2,9 +2,11 @@ package com.github.lalyos.kore;
 
 import java.util.Locale;
 
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.core.io.ClassPathResource;
 
 
 @Configuration
@@ -23,8 +25,6 @@ public class GreetingConfiguration {
     @Bean
     public GreetingService greetingService() {
         I18NGreetingService greetingService = new I18NGreetingService();
-        greetingService.setLocale(new Locale("hu"));
-        greetingService.setMessageKey("msg.welcome");
         return greetingService;
     }
 
@@ -42,6 +42,13 @@ public class GreetingConfiguration {
         msg.setBasename("messages");
         
         return msg;
+    }
+    
+    @Bean
+    public PropertyPlaceholderConfigurer propertyPlaceholder() {
+        PropertyPlaceholderConfigurer placeholderConfigurer = new PropertyPlaceholderConfigurer();
+        placeholderConfigurer.setLocation(new ClassPathResource("greeting.properties"));
+        return placeholderConfigurer;
     }
     
 }
