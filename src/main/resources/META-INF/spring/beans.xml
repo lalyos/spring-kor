@@ -18,9 +18,13 @@
   
   
 
-  <bean class="com.github.lalyos.kore.GreetingApp" p:owner-ref="bill" />
+  <bean class="com.github.lalyos.kore.GreetingApp"  >
+    <property name="owner">
+          <bean class="com.github.lalyos.kore.Person" c:firstName="Bill" c:lastName="Clinton" />
+    </property>
+   </bean>
+
   
-  <bean id="bill" class="com.github.lalyos.kore.Person" c:firstName="Bill" c:lastName="Clinton" ></bean>
   
   <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
   p:basename="messages"/>
