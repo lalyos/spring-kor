@@ -22,7 +22,9 @@ public class GreetingConfiguration {
 
     @Bean
     public GreetingService greetingService() {
-        SimpleGreetingService greetingService = new SimpleGreetingService("Hallo ");
+        I18NGreetingService greetingService = new I18NGreetingService();
+        greetingService.setLocale(new Locale("hu"));
+        greetingService.setMessageKey("msg.welcome");
         return greetingService;
     }
 
