@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class GreetingApp {
 
-    @Autowired
+    //@Autowired
     @Qualifier("i18n")
     private GreetingService greetingService;
-    @Autowired
+    //@Autowired
     private PersonRepository personRepository;
     
-    @Value("Bill, Clinton")
+    //@Value("Bill, Clinton")
     private Person owner;
     
     public GreetingService getGreetingService() {

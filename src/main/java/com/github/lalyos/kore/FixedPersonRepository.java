@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Component
 public class FixedPersonRepository implements PersonRepository {
 
-    @Autowired
+    //@Autowired
     @Qualifier("male")
     private List<Person> allPeople = new ArrayList<Person>();
 
